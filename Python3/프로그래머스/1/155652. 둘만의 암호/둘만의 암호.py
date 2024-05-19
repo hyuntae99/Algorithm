@@ -9,12 +9,10 @@ def solution(s, skip, index):
     for c in s:        
         aci = ord(c)
         for i in range(index):
-            aci = rotate(aci)
-            if chr(aci) in skip:
-                aci = rotate(aci)
+            aci = rotate(aci) 
             # skip 문자열에 포함된 문자는 건너뛰기
             while chr(aci) in skip:
-                aci = rotate(aci)
+                aci = rotate(aci) 
         answer += chr(aci)
 
     return answer
