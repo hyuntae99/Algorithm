@@ -12,7 +12,6 @@ def solution(word):
     
     # 사전 순서로 정렬
     arr.sort()
-    
 
     answer = 0
     # 모든 조합을 확인하며 단어를 찾기
