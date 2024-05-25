@@ -1,0 +1,8 @@
+-- 코드를 입력하세요
+SELECT FLAVOR 
+FROM JULY J
+GROUP BY J.FLAVOR
+ORDER BY 
+    SUM(J.TOTAL_ORDER) + (SELECT SUM(F.TOTAL_ORDER)
+                          FROM FIRST_HALF F
+                          WHERE J.FLAVOR = F.FLAVOR) DESC LIMIT 3
