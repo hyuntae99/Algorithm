@@ -1,4 +1,8 @@
 import itertools
+# permutations : 순열
+# prodcut : 중복 순열
+# combinations
+# combinations_with_replacement # 중복 조합
 
 def solution(word):
     arr = [] # 만들 수 있는 모든 사전 조합
