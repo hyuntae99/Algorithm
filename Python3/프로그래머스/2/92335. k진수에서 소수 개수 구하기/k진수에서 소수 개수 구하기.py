@@ -1,3 +1,4 @@
+# 소수 판별 알고리즘
 def is_prime(n):
     if n < 2:
         return False
@@ -6,6 +7,7 @@ def is_prime(n):
             return False
     return True
 
+# 10진수 -> k진수로 변환
 def convert_to_base(n, base):
     T = "0123456789ABCDEF"
     if n == 0:
