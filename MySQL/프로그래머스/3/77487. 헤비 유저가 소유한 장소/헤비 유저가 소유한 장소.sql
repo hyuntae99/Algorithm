@@ -1,0 +1,10 @@
+SELECT 
+    P.ID, P.NAME, P.HOST_ID
+FROM 
+    PLACES P
+JOIN
+    # HOST_ID에 대한 공간 등록 수 서브 쿼리
+    (SELECT HOST_ID, COUNT(*) AS CNT
+     FROM PLACES 
+     GROUP BY HOST_ID) A ON P.HOST_ID = A.HOST_ID
+WHERE A.CNT >= 2; # 서브쿼리 값 사용
