@@ -1,0 +1,15 @@
+# CART_ID, NAME으로 묶는다
+WITH A 
+    AS (SELECT *
+        FROM CART_PRODUCTS
+        GROUP BY CART_ID, NAME
+        HAVING NAME LIKE '%Milk%' OR NAME LIKE '%Yogurt%')
+
+SELECT 
+    CART_ID
+FROM 
+    A
+GROUP BY 
+    CART_ID
+HAVING 
+    COUNT(CART_ID) = 2 # CART_ID, NAME이 2개라면 모두 구매한 것
