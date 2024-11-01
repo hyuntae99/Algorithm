@@ -18,10 +18,6 @@ def solution(board):
     while q:
         ci, cj, d, cc = q.popleft()
 
-        # 목적지 도달 시 최소 비용 반환
-        if (ci, cj) == (N - 1, N - 1):
-            continue
-
         for i in range(4):
             ni, nj = ci + di[i], cj + dj[i]
 
