@@ -7,11 +7,11 @@ WITH A
             
 SELECT 
     E.ID,
-    CASE
-        WHEN A.PCT > 0.75 THEN 'LOW'
-        WHEN A.PCT > 0.5 THEN 'MEDIUM'
-        WHEN A.PCT > 0.25 THEN 'HIGH'
-        ELSE 'CRITICAL'
+    CASE 
+        WHEN A.PCT <= 0.25 THEN 'CRITICAL'
+        WHEN A.PCT <= 0.5 THEN 'HIGH'
+        WHEN A.PCT <= 0.75 THEN 'MEDIUM'
+        ELSE 'LOW'
     END AS COLONY_NAME
 FROM 
     ECOLI_DATA E
@@ -21,4 +21,3 @@ ON
     E.ID = A.ID
 ORDER BY
     E.ID;
-    
