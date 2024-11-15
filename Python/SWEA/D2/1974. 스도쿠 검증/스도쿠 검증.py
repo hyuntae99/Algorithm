@@ -31,5 +31,8 @@ T = int(input())
 for test_case in range(1, T+1):
     arr = [list(map(int, input().split())) for _ in range(9)]
 
-    ans = 1 if check1(arr) and check2(arr) else 0
+    ans = 0
+    if check1(arr) and check2(arr):
+        ans = 1
+        
     print(f'#{test_case} {ans}')
